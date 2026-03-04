@@ -1,0 +1,28 @@
+dataset:
+  image_size: 128
+  lesions_per_image: [1, 4]
+  susceptibility_range: [0.02, 0.25]
+  noise_std: 0.03
+  seed: 42
+
+model:
+  name: transformer
+  args:
+    image_size: 128
+    patch_size: 8
+    embed_dim: 256
+    depth: 6
+    num_heads: 8
+
+loss:
+  alpha: 1.0
+  beta: 0.2
+  gamma: 0.05
+
+train:
+  train_samples: 512
+  val_samples: 128
+  batch_size: 8
+  epochs: 20
+  lr: 0.0003
+  output_dir: outputs
